@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+   sqlserver:
+     image: mcr.microsoft.com/mssql/server:2019-latest
+     environment:
+       ACCEPT_EULA: Y
+       SA_PASSWORD: Qwerty2020
+
+   sif:
+     depends_on:
+       - sqlserver
+     image: stevechapman/sifapisandbox:latest
+     ports:
+       - "80:80"
+       - "443:443"
