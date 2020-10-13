@@ -3,14 +3,18 @@ version: '3.3'
 services:
    sqlserver:
      image: mcr.microsoft.com/mssql/server:2019-latest
+     container_name: "db"
+     ports:
+      - "1433:1433"
      environment:
-       ACCEPT_EULA: Y
-       SA_PASSWORD: Qwerty2020
+       ACCEPT_EULA: "Y"
+       SA_PASSWORD: "Qwerty2020"
 
    sif:
      depends_on:
        - sqlserver
-     image: stevechapman/sifapisandbox:latest
+     image: stevechapman/teritomocksifapi:latest
+     container_name: "sif"
      ports:
        - "80:80"
        - "443:443"
