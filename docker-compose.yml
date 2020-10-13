@@ -2,8 +2,8 @@ version: '3.3'
 
 services:
    sqlserver:
-     image: mcr.microsoft.com/mssql/server:2019-latest
-     container_name: "db"
+     image: sierracsd/mocksifdb:1.0
+     container_name: "sqlserver"
      ports:
       - "1433:1433"
      environment:
@@ -13,7 +13,7 @@ services:
    sif:
      depends_on:
        - sqlserver
-     image: stevechapman/teritomocksifapi:latest
+     image: sierracsd/mocksif:1.0
      container_name: "sif"
      ports:
        - "80:80"
