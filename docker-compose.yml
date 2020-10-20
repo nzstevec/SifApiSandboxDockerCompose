@@ -4,6 +4,8 @@ services:
    sqlserver:
      image: sierracsd/mocksifdb:1.1
      container_name: "sqlserver"
+     networks:
+      - mocksif
      ports:
       - "1433:1433"
      environment:
@@ -15,6 +17,10 @@ services:
        - sqlserver
      image: sierracsd/sifapisandbox:latest
      container_name: "sif"
+     networks:
+      - mocksif
      ports:
        - "80:80"
        - "443:443"
+networks: 
+  mocksif:
