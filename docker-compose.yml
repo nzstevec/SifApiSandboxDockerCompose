@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
    sqlserver:
-     image: sierracsd/mocksifdb:1.1
+     image: sierracsd/mocksifdb:1.2
      container_name: "sqlserver"
      networks:
       - mocksif
