@@ -1,4 +1,29 @@
 
+**Create mocksif server in local machine**
+
+Assuming you have Docker for Windows installed. You can enter docker commands from a Windows command prompt (or bash if configured?)
+
+To start as a daemon in the background:
+  docker-compose up -d
+
+To start in foreground:
+  docker-compose up
+
+To stop:
+  docker-compose down
+
+To list docker containers:
+  docker container ls
+
+To list docker images:
+  docker image ls
+
+To logon to dockerhub:
+  docker login
+
+To pull an updated docker image:
+  docker pull sierracsd/mocksifdb
+
 **Create mocksif server in Azure**
 
 ```
